@@ -1,4 +1,3 @@
-
 vim.keymap.set('n', '<C-k>', ':wincmd k<CR>', {})
 vim.keymap.set('n', '<C-j>', ':wincmd j<CR>', {})
 vim.keymap.set('n', '<C-h>', ':wincmd h<CR>', {})
@@ -7,6 +6,12 @@ vim.keymap.set("n", "<C-h>", ":TmuxNavigateLeft<CR>", {})
 vim.keymap.set("n", "<C-j>", ":TmuxNavigateDown<CR>", {})
 vim.keymap.set("n", "<C-k>", ":TmuxNavigateUp<CR>", {})
 vim.keymap.set("n", "<C-l>", ":TmuxNavigateRight<CR>", {})
+
+vim.keymap.set("n", "<A-l>", ":BufferNext<CR>", {})
+vim.keymap.set("n", "<A-h>", ":BufferPrevious<CR>", {})
+vim.keymap.set("n", "<C-w>", ":BufferClose<CR>", {})
+vim.keymap.set("n", "<C-T>", ":BufferRestore<CR>", {})
+
 vim.keymap.set('i', 'jj', '<Esc>', {})
 vim.keymap.set('i', '<C-s>', vim.lsp.buf.signature_help, {})
 vim.keymap.set('n', '<S-Tab>', ':NvimTreeFocus<CR>', {})
@@ -19,3 +24,5 @@ vim.keymap.set('v', '<A-j>', ":m '>+<CR>gv=gv", { noremap = true, silent = true 
 
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<C-p>', builtin.find_files, {})
+vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })

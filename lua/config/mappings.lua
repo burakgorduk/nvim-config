@@ -22,6 +22,8 @@ vim.keymap.set('i', '<A-j>', "<Esc>:m .+<CR>==gi", { noremap = true, silent = tr
 vim.keymap.set('v', '<A-k>', ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
 vim.keymap.set('v', '<A-j>', ":m '>+<CR>gv=gv", { noremap = true, silent = true })
 
+vim.keymap.set('n', '<leader>xx', ':Trouble diagnostics toggle<CR>', {})
+
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<C-p>', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })

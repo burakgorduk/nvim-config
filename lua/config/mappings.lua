@@ -29,4 +29,6 @@ vim.keymap.set('n', '<C-p>', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
 vim.keymap.set('n', '<leader>sg', builtin.grep_string, { desc = 'Telescope grep' })
 vim.keymap.set('v', '<leader>sg', builtin.grep_string, { desc = 'Telescope grep' })
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope grep' })
+
+vim.keymap.set('n', '<leader>db', function() require('dap').toggle_breakpoint() end)
+vim.keymap.set('n', '<leader>ds', function() require('dap').continue() end)
